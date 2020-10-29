@@ -20,7 +20,7 @@ then(
     }
 );
 mongoose.set('useFindAndModify',false);
-const boardRouter = require('./routes/board');
+
 
 const app = express();
 
@@ -31,6 +31,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
+
+const boardRouter = require('./routes/board');
+const defaultRouter = require('./routes/index');
+
+app.use('/',defaultRouter);
 app.use('/dashboard', boardRouter);
 
 // catch 404 and forward to error handler
