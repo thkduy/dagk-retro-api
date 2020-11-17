@@ -33,10 +33,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 const boardRouter = require('./routes/board');
-const defaultRouter = require('./routes/index');
-
-app.use('/',defaultRouter);
-app.use('/dashboard', boardRouter);
+const authRouter = require('./routes/auth');
+app.use('/', boardRouter);
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
