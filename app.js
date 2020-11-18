@@ -5,8 +5,6 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 
-
-
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://adminretro:admin@cluster0.4kg2c.mongodb.net/retro?retryWrites=true&w=majority', 
 { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).
