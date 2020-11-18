@@ -6,7 +6,7 @@ const Board = mongoose.Schema(
         description: String,
         owner: {type: mongoose.Schema.Types.ObjectId, ref: 'UserData'},
         column: [{
-            type: mongoose.Schema.Types.ObjectId, ref: 'column'
+            type: mongoose.Schema.Types.ObjectId, ref: 'column', default: []
         }]
     }
 );
